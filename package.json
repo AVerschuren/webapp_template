@@ -1,0 +1,22 @@
+{
+  "name": "package_name",
+  "version": "1.0.0",
+  "description": "Dit is een beschrijving",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AVerschuren/webapp_template.git"
+  },
+  "keywords": [
+    "keyword"
+  ],
+  "author": "Aaron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AVerschuren/webapp_template/issues"
+  },
+  "homepage": "https://github.com/AVerschuren/webapp_template#readme"
+}
