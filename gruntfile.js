@@ -2,7 +2,15 @@ module.exports = function(grunt) {
 
 grunt.initConfig({
 pkg: grunt.file.readJSON('package.json'),
-
+concat: {
+  options: {
+    separator: ';'
+  },
+  dist: {
+    src: ['src/*.js'],
+    dest: 'dist/<%= pkg.name %>.js'
+  }
+},
 uglify: {
   options: {
     banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
@@ -31,14 +39,16 @@ babel: {
     },
     dist: {
         files: {
-            'dist/app.js': 'main.js'
+            'dist/app.js': 'src/main.js'
         }
     }
 }
+});
+    
 grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
-grunt.loadNpmTasks('grunt-contrib-babel');    
+grunt.loadNpmTasks('grunt-babel');
 
-grunt.registerTask('default', ['babel', 'uglify', 'cssmin']);
+grunt.registerTask('default', [ 'uglify', 'cssmin', 'babel']);
 
 };
